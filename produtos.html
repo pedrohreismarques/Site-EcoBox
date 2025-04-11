@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/logo-2.png" type="image/png">
+  <title>Produtos | EcoBox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fundo: #EFE3C0;
+      --verde-escuro: #2F5532;
+      --fonte-principal: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--fonte-principal);
+      background-color: var(--fundo);
+      color: var(--verde-escuro);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--fundo);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: auto 15px;
+      text-decoration: none;
+      color: var(--verde-escuro);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e3b23;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    .btn-loja {
+      padding: 10px 20px;
+      border: 2px solid var(--verde-escuro);
+      background-color: transparent;
+      color: var(--verde-escuro);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-loja:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+    }
+
+    .titulo-categoria {
+      text-align: center;
+      font-size: 28px;
+      margin: 50px 0 20px;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card-produto {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .card-produto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-produto h3 {
+      margin: 15px 10px 5px;
+      font-size: 20px;
+    }
+
+    .card-produto p {
+      font-size: 14px;
+      padding: 0 15px;
+      color: #444;
+      min-height: 60px;
+    }
+
+    .btn-vermais {
+      margin-top: 10px;
+      background-color: var(--verde-escuro);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-vermais:hover {
+      background-color: #1e3b23;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo-3.png" alt="EcoBox Logo" class="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+    <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
+  </header>
+
+  <h2 class="titulo-categoria">Cosméticos e Higiene</h2>
+  <section class="produtos-grid">
+    <div class="card-produto">
+      <img src="" alt="Shampoo e Condicionador">
+      <h3>Kit Refill EcoShampoo</h3>
+      <p>Frascos reutilizáveis para shampoo, condicionador e sabonete líquido. Estilo e sustentabilidade no seu banho.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Pasta de dentes">
+      <h3>DentEco Tubes</h3>
+      <p>Tubos recicláveis para pastas dentais ecológicas, com fórmulas naturais e veganas.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Sabonetes Naturais">
+      <h3>Sabonete EcoPuro</h3>
+      <p>Sabonetes artesanais com óleos essenciais e ingredientes 100% naturais.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Escovas de Dente de Bambu">
+      <h3>BrushBambu</h3>
+      <p>Escovas biodegradáveis feitas com cabo de bambu e cerdas veganas.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Cotonetes Biodegradáveis">
+      <h3>EcoCotonetes</h3>
+      <p>Cotonetes com haste de papel e algodão orgânico. 100% biodegradáveis.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Embalagens Compostáveis">
+      <h3>Pack Verde</h3>
+      <p>Embalagens compostáveis ideais para produtos sólidos como shampoo e condicionador em barra.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+  </section>
+
+  <h2 class="titulo-categoria">Produtos de Limpeza</h2>
+  <section class="produtos-grid">
+    <div class="card-produto">
+      <img src="" alt="Multiuso Natural">
+      <h3>EcoSpray Multiuso</h3>
+      <p>Limpeza eficiente e natural com fórmula biodegradável e segura para pets e crianças.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Detergente">
+      <h3>Detergente EcoDrop</h3>
+      <p>Cápsulas concentradas e veganas para um detergente potente e sem resíduos plásticos.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Sabão Vegano">
+      <h3>Sabão EcoBar</h3>
+      <p>Sabão em barra ou líquido vegano com óleos vegetais e ação eficaz contra gordura.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Limpador de Banheiro">
+      <h3>EcoWC Natural</h3>
+      <p>Limpeza pesada com ingredientes naturais e fragrância suave. Ideal para banheiros.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Desinfetante Natural">
+      <h3>Desinfetante VidaLimpa</h3>
+      <p>Desinfetante natural à base de citronela e eucalipto, seguro para todos os ambientes.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+    <div class="card-produto">
+      <img src="" alt="Amaciante Natural">
+      <h3>Amaciante EcoSoft</h3>
+      <p>Com base vegetal, amacia e perfuma suas roupas sem agredir a natureza.</p>
+      <button class="btn-vermais">Ver Mais</button>
+    </div>
+  </section>
+</body>
+</html>

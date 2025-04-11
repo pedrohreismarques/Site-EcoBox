@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/logo-2.png" type="image/png">
+  <title>EcoBox</title>
+  <style>
+    :root {
+      --fundo: #EFE3C0;
+      --verde-escuro: #2F5532;
+      --fonte-principal: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--fonte-principal);
+      background-color: var(--fundo);
+      color: var(--verde-escuro);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--fundo);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: auto 15px;
+      text-decoration: none;
+      color: var(--verde-escuro);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e3b23;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    .btn-loja {
+      padding: 10px 20px;
+      border: 2px solid var(--verde-escuro);
+      background-color: transparent;
+      color: var(--verde-escuro);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-loja:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons button {
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: 2px solid var(--verde-escuro);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-verde {
+      background-color: var(--verde-escuro);
+      color: #fff;
+    }
+
+    .btn-verde:hover {
+      background-color: #1e3b23;
+    }
+
+    .btn-borda {
+      background-color: transparent;
+      color: var(--verde-escuro);
+    }
+
+    .btn-borda:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+    }
+
+    .sobre, .contato {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .sobre img {
+      width: 100%;
+      max-width: 250px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .contato h2 {
+      margin-bottom: 20px;
+    }
+
+    .contato p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="img\logo-3.png" alt="EcoBox Logo" class="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+    <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
+  </header>
+
+  <section class="hero">
+    <h1>Bem-vindo à EcoBox</h1>
+    <p>Soluções Sustentáveis para um Futuro Mais Verde.</p>
+    <div class="hero-buttons">
+      <a href="produtos.html" class="btn-borda" style="text-decoration: none; display: inline-block; padding: 12px 24px; border-radius: 5px; font-weight: bold; border: 2px solid var(--verde-escuro); transition: all 0.3s; cursor: pointer;">Conheça Nossos Produtos</a>
+      <a href="sobre.html" class="btn-borda" style="text-decoration: none; display: inline-block; padding: 12px 24px; border-radius: 5px; font-weight: bold; border: 2px solid var(--verde-escuro); transition: all 0.3s; cursor: pointer;">Nossa Missão</a>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <h2>Sobre a EcoBox</h2>
+    <p>
+        A Ecobox é a escolha perfeita para quem quer viver de forma mais sustentável sem abrir mão da praticidade. 
+        Todo mês, você recebe em casa uma caixa recheada de produtos ecológicos, criativos e cheios de propósito, 
+        pensados para tornar o seu dia a dia mais consciente e com menos impacto ambiental. 
+        É uma maneira simples, acessível e inspiradora de transformar seus hábitos e fazer parte 
+        de um movimento que acredita que pequenas atitudes geram grandes mudanças.
+    </p>
+    <img src="img/EcoBox-Caixa.jpg" alt="Caixa ecológica">
+  </section>
+
+  <section class="contato" id="contato">
+    <h2>Fale Conosco</h2>
+    <p>Entre em contato com a gente pelas nossas redes ou por e-mail!</p>
+    <div style="max-width: 600px; margin: 30px auto; text-align: left;">
+      <p><strong>E-mail:</strong> contato@ecobox.com.br</p>
+      <div style="max-width: 600px; margin: 30px auto; text-align: left;">
+        <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/ecobox.oficial" target="_blank" 
+        style="color: var(--verde-escuro); text-decoration: underline;">@ecobox.oficial
+
+        </a>
+    </p>
+    </div>
+  </section>
+</body>
+</html>
