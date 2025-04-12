@@ -136,13 +136,59 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* NOVOS AJUSTES PARA MOBILE */
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .btn-loja {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .hero {
+        padding: 60px 10px;
+      }
+
       .hero h1 {
-        font-size: 36px;
+        font-size: 28px;
       }
 
       .hero p {
-        font-size: 18px;
+        font-size: 16px;
+      }
+
+      .hero-buttons a {
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .sobre, .contato {
+        padding: 40px 20px;
+      }
+
+      .contato div {
+        text-align: center;
+      }
+
+      .logo {
+        height: 60px;
       }
     }
   </style>
@@ -150,7 +196,7 @@
 </head>
 <body>
   <header>
-    <img src="img\logo-3.png" alt="EcoBox Logo" class="logo" />
+    <img src="img/logo-3.png" alt="EcoBox Logo" class="logo" />
     <nav>
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
@@ -171,11 +217,11 @@
   <section class="sobre" id="sobre">
     <h2>Sobre a EcoBox</h2>
     <p>
-        A Ecobox é a escolha perfeita para quem quer viver de forma mais sustentável sem abrir mão da praticidade. 
-        Todo mês, você recebe em casa uma caixa recheada de produtos ecológicos, criativos e cheios de propósito, 
-        pensados para tornar o seu dia a dia mais consciente e com menos impacto ambiental. 
-        É uma maneira simples, acessível e inspiradora de transformar seus hábitos e fazer parte 
-        de um movimento que acredita que pequenas atitudes geram grandes mudanças.
+      A Ecobox é a escolha perfeita para quem quer viver de forma mais sustentável sem abrir mão da praticidade. 
+      Todo mês, você recebe em casa uma caixa recheada de produtos ecológicos, criativos e cheios de propósito, 
+      pensados para tornar o seu dia a dia mais consciente e com menos impacto ambiental. 
+      É uma maneira simples, acessível e inspiradora de transformar seus hábitos e fazer parte 
+      de um movimento que acredita que pequenas atitudes geram grandes mudanças.
     </p>
     <img src="img/EcoBox-Caixa.jpg" alt="Caixa ecológica">
   </section>
@@ -185,13 +231,13 @@
     <p>Entre em contato com a gente pelas nossas redes ou por e-mail!</p>
     <div style="max-width: 600px; margin: 30px auto; text-align: left;">
       <p><strong>E-mail:</strong> contato@ecobox.com.br</p>
-      <div style="max-width: 600px; margin: 30px auto; text-align: left;">
-        <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/ecobox.oficial" target="_blank" 
-        style="color: var(--verde-escuro); text-decoration: underline;">@ecobox.oficial
-
+      <p><strong>WhatsApp:</strong> (11) 91234-5678</p>
+      <p><strong>Instagram:</strong> 
+        <a href="https://instagram.com/ecobox.oficial" target="_blank" 
+           style="color: var(--verde-escuro); text-decoration: underline;">
+           @ecobox.oficial
         </a>
-    </p>
+      </p>
     </div>
   </section>
 </body>
