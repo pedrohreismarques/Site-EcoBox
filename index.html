@@ -28,7 +28,18 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: auto 15px;
+      text-decoration: none;
+      color: var(--verde-escuro);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e3b23;
     }
 
     .logo {
@@ -49,83 +60,6 @@
     .btn-loja:hover {
       background-color: var(--verde-escuro);
       color: #fff;
-    }
-
-    nav a {
-      margin: auto 15px;
-      text-decoration: none;
-      color: var(--verde-escuro);
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #1e3b23;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 10px;
-    }
-
-    .menu-toggle .bar {
-      height: 3px;
-      width: 25px;
-      background-color: var(--verde-escuro);
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    .menu-toggle.open .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.open .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.open .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        animation: slideDown 0.3s ease forwards;
-      }
-
-      .menu.show {
-        display: flex;
-      }
-
-      .menu a {
-        margin: 10px 0;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .btn-loja {
-        margin-top: 10px;
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .hero {
@@ -201,25 +135,72 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .btn-loja {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .hero {
+        padding: 60px 10px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons a {
+        display: block;
+        margin: 20px auto; /* espaçamento maior entre os botões */
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .sobre, .contato {
+        padding: 40px 20px;
+      }
+
+      .contato div {
+        text-align: center;
+      }
+
+      .logo {
+        height: 60px;
+      }
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <img src="img/logo-3.png" alt="EcoBox Logo" class="logo" />
-
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-
-    <nav id="menu" class="menu">
+    <nav>
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="sobre.html">Sobre Nós</a>
     </nav>
-
     <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
   </header>
 
@@ -258,14 +239,5 @@
       </p>
     </div>
   </section>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const toggle = document.querySelector('.menu-toggle');
-      menu.classList.toggle('show');
-      toggle.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
