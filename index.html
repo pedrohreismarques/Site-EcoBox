@@ -30,6 +30,16 @@
       z-index: 10;
     }
 
+    .logo {
+      height: 80px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
     nav a {
       margin: auto 15px;
       text-decoration: none;
@@ -40,10 +50,6 @@
 
     nav a:hover {
       color: #1e3b23;
-    }
-
-    .logo {
-      height: 80px;
     }
 
     .btn-loja {
@@ -60,6 +66,30 @@
     .btn-loja:hover {
       background-color: var(--verde-escuro);
       color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      height: 24px;
+    }
+
+    .menu-toggle span {
+      background: var(--verde-escuro);
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+
+    .menu-open nav {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      max-height: 500px;
     }
 
     .hero {
@@ -139,17 +169,35 @@
     @media (max-width: 768px) {
       header {
         flex-direction: column;
+        align-items: flex-start;
         padding: 10px 20px;
-        text-align: center;
+      }
+
+      .logo {
+        height: 60px;
+      }
+
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
 
       nav {
-        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
       }
 
       nav a {
         display: block;
         margin: 10px 0;
+        width: 100%;
+        text-align: center;
       }
 
       .btn-loja {
@@ -172,7 +220,7 @@
 
       .hero-buttons a {
         display: block;
-        margin: 20px auto; /* espaçamento maior entre os botões */
+        margin: 20px auto;
         width: 90%;
         max-width: 300px;
         text-align: center;
@@ -185,22 +233,26 @@
       .contato div {
         text-align: center;
       }
-
-      .logo {
-        height: 60px;
-      }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header id="header">
     <img src="img/logo-3.png" alt="EcoBox Logo" class="logo" />
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="sobre.html">Sobre Nós</a>
     </nav>
+    
     <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
   </header>
 
@@ -239,5 +291,11 @@
       </p>
     </div>
   </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('header').classList.toggle('menu-open');
+    }
+  </script>
 </body>
 </html>
