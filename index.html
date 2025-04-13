@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="img/logo-2.png" type="image/png">
   <title>EcoBox</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --fundo: #EFE3C0;
@@ -28,7 +27,7 @@
       background-color: var(--fundo);
       position: sticky;
       top: 0;
-      z-index: 1002;
+      z-index: 10;
     }
 
     .logo {
@@ -38,6 +37,7 @@
     nav {
       display: flex;
       align-items: center;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
     }
 
     nav a {
@@ -66,6 +66,30 @@
     .btn-loja:hover {
       background-color: var(--verde-escuro);
       color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      height: 24px;
+    }
+
+    .menu-toggle span {
+      background: var(--verde-escuro);
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+
+    .menu-open nav {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      max-height: 500px;
     }
 
     .hero {
@@ -142,134 +166,102 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ---------- MOBILE (ATÉ 768px) ---------- */
     @media (max-width: 768px) {
-      nav {
-        display: none; /* Esconde menu padrão no mobile */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      .logo {
+        height: 60px;
       }
 
       .menu-toggle {
         display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      nav {
         flex-direction: column;
-        justify-content: center;
-        cursor: pointer;
-        height: 24px;
-        z-index: 1003;
-      }
-
-      .menu-toggle span {
-        background: var(--verde-escuro);
-        height: 3px;
-        width: 25px;
-        margin: 3px 0;
-        transition: all 0.4s ease;
-        border-radius: 2px;
-      }
-
-      .menu-open .menu-toggle span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-
-      .menu-open .menu-toggle span:nth-child(2) {
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
         opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
       }
 
-      .menu-open .menu-toggle span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-      }
-
-      .side-menu {
-        position: fixed;
-        top: 0;
-        left: -260px;
-        width: 250px;
-        height: 100%;
-        background-color: var(--fundo);
-        padding: 80px 20px 20px;
-        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        transition: left 0.3s ease;
-        z-index: 1001;
-      }
-
-      .side-menu a {
-        text-decoration: none;
-        color: var(--verde-escuro);
-        font-weight: 500;
-        font-size: 18px;
-      }
-
-      .side-menu a:hover {
-        color: #1e3b23;
-      }
-
-      .menu-open .side-menu {
-        left: 0;
-      }
-
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-      }
-
-      .menu-open .overlay {
+      nav a {
         display: block;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
       }
 
       .btn-loja {
         margin-top: 10px;
         width: 100%;
-        max-width: 200px;
-        align-self: center;
+        max-width: 300px;
+      }
+
+      .hero {
+        padding: 60px 10px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons a {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .sobre, .contato {
+        padding: 40px 20px;
+      }
+
+      .contato div {
+        text-align: center;
       }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="header">
     <img src="img/logo-3.png" alt="EcoBox Logo" class="logo" />
-
-    <!-- BOTÃO HAMBURGUER (só aparece no mobile via media query) -->
+    
     <div class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- MENU DESKTOP (padrão) -->
     <nav>
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="sobre.html">Sobre Nós</a>
-      <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
     </nav>
-
-    <!-- MENU MOBILE -->
-    <div class="side-menu" id="sideMenu">
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="sobre.html">Sobre Nós</a>
-      <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
-    </div>
-
-    <!-- FUNDO ESCURO -->
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    
+    <button class="btn-loja" onclick="location.href='loja.html'">Loja Online</button>
   </header>
 
   <section class="hero">
     <h1>Bem-vindo à EcoBox</h1>
     <p>Soluções Sustentáveis para um Futuro Mais Verde.</p>
     <div class="hero-buttons">
-      <a href="produtos.html" class="btn-borda" style="text-decoration: none; display: inline-block;">Conheça Nossos Produtos</a>
-      <a href="sobre.html" class="btn-borda" style="text-decoration: none; display: inline-block;">Nossa Missão</a>
+      <a href="produtos.html" class="btn-borda" style="text-decoration: none; display: inline-block; padding: 12px 24px; border-radius: 5px; font-weight: bold; border: 2px solid var(--verde-escuro); transition: all 0.3s; cursor: pointer;">Conheça Nossos Produtos</a>
+      <a href="sobre.html" class="btn-borda" style="text-decoration: none; display: inline-block; padding: 12px 24px; border-radius: 5px; font-weight: bold; border: 2px solid var(--verde-escuro); transition: all 0.3s; cursor: pointer;">Nossa Missão</a>
     </div>
   </section>
 
@@ -302,7 +294,7 @@
 
   <script>
     function toggleMenu() {
-      document.body.classList.toggle('menu-open');
+      document.getElementById('header').classList.toggle('menu-open');
     }
   </script>
 </body>
