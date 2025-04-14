@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="img/logo-2.png" type="image/png">
   <title>EcoBox | Sobre Nós</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --fundo: #EFE3C0;
       --verde-escuro: #2F5532;
+      --verde-hover: #1e3b23;
       --fonte-principal: 'Poppins', sans-serif;
     }
 
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: var(--fonte-principal);
       background-color: var(--fundo);
       color: var(--verde-escuro);
@@ -24,14 +31,19 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: var(--fundo);
+      background-color: #fff;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      height: 80px;
     }
 
     nav a {
-      margin: auto 15px;
+      margin: 0 15px;
       text-decoration: none;
       color: var(--verde-escuro);
       font-weight: 500;
@@ -39,11 +51,7 @@
     }
 
     nav a:hover {
-      color: #1e3b23;
-    }
-
-    .logo {
-      height: 80px;
+      color: var(--verde-hover);
     }
 
     .btn-loja {
@@ -70,6 +78,7 @@
 
     h1, h2 {
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .motivacao {
@@ -82,7 +91,7 @@
     .equipe {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
       gap: 30px;
     }
 
@@ -101,10 +110,12 @@
       max-height: 150px;
       border-radius: 8px;
       margin-bottom: 15px;
+      object-fit: cover;
     }
 
     .membro h3 {
       margin: 10px 0 5px;
+      font-size: 18px;
     }
 
     .membro p {
@@ -118,7 +129,6 @@
       }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -133,6 +143,7 @@
 
   <main class="container">
     <h1>Sobre a EcoBox</h1>
+
     <section class="motivacao">
       <h2>Nossa Motivação</h2>
       <p>
@@ -152,32 +163,32 @@
       <h2>Conheça a Equipe</h2>
       <div class="equipe">
         <div class="membro">
-          <img src="img/Laiz-CEO.jpg" alt="Foto da Laiz Santana - CEO">
+          <img src="img/Laiz-CEO.jpg" alt="Foto de Laiz Santana">
           <h3>Laiz Santana</h3>
           <p>CEO. Responsável e sempre buscando inovação para o crescimento da empresa.</p>
         </div>
         <div class="membro">
-          <img src="img/Lorena-GerentedeVendas.jpg" alt="Foto da Lorena Nunes - Vendas">
+          <img src="img/Lorena-GerentedeVendas.jpg" alt="Foto de Lorena Nunes">
           <h3>Lorena Nunes</h3>
           <p>Gestão em Vendas. Responsável por gerenciar as vendas dos produtos.</p>
         </div>
         <div class="membro">
-          <img src="img/Emanuel-AgentedeProduções.jpg" alt="Foto do Emanuel Coelho - Produção">
+          <img src="img/Emanuel-AgentedeProduções.jpg" alt="Foto de Emanuel Coelho">
           <h3>Emanuel Coelho</h3>
           <p>Gestão em Produção. Responsável por organizar a produção dos produtos.</p>
         </div>
         <div class="membro">
-          <img src="img/Pedro-GestorDeTecnologia.jpg" alt="Foto do Pedro Marques - Tecnologia">
+          <img src="img/Pedro-GestorDeTecnologia.jpg" alt="Foto de Pedro Marques">
           <h3>Pedro Marques</h3>
           <p>Gestão em Tecnologia. Responsável por gerenciar os softwares criados e utilizados pela empresa.</p>
         </div>
         <div class="membro">
-          <img src="img/Emily-Marketing.jpg" alt="Foto da Emily Espíndola - Marketing">
+          <img src="img/Emily.jpg" alt="Foto de Emily Espíndola">
           <h3>Emily Espíndola</h3>
           <p>Gestão em Marketing. Responsável pela divulgação dos produtos.</p>
         </div>
         <div class="membro">
-          <img src="img/Vanessa-Logistica.jpg" alt="Foto da Vanessa Santana - Logística">
+          <img src="img/Vanessa.jpg" alt="Foto de Vanessa Santana">
           <h3>Vanessa Santana</h3>
           <p>Gestão em Logística. Responsável por garantir que os produtos cheguem até os clientes.</p>
         </div>
